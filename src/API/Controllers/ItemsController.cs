@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.API.Controllers
 {
-    //[Authorize]
     public class ItemsController : ApiController
     {
         [HttpGet]
