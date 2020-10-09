@@ -43,7 +43,6 @@ namespace CleanArchitecture.API
 
             services.AddRazorPages();
 
-            // Customise default API behaviour
             services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;

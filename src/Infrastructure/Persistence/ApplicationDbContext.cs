@@ -1,15 +1,15 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Domain.Common;
-using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Infrastructure.Identity;
-using IdentityServer4.EntityFramework.Options;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
-using Microsoft.EntityFrameworkCore;
+using CleanArchitecture.Infrastructure.Identity;
+using CleanArchitecture.Application.Common.Interfaces;
 using Microsoft.Extensions.Options;
-using System.Linq;
-using System.Reflection;
+using IdentityServer4.EntityFramework.Options;
+using CleanArchitecture.Domain.Entities;
 using System.Threading;
 using System.Threading.Tasks;
+using CleanArchitecture.Domain.Common;
+using System.Linq;
+using System.Reflection;
 
 namespace CleanArchitecture.Infrastructure.Persistence
 {
@@ -18,6 +18,7 @@ namespace CleanArchitecture.Infrastructure.Persistence
         private readonly ICurrentUserService _currentUserService;
         private readonly IDateTime _dateTime;
         private readonly IDomainEventService _domainEventService;
+        public DbSet<Item> Items { get; set; }
 
         public ApplicationDbContext(
             DbContextOptions options,
@@ -30,11 +31,7 @@ namespace CleanArchitecture.Infrastructure.Persistence
             _domainEventService = domainEventService;
             _dateTime = dateTime;
         }
-
-        public DbSet<TodoItem> TodoItems { get; set; }
-
-        public DbSet<TodoList> TodoLists { get; set; }
-
+        
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
             foreach (Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry<AuditableEntity> entry in ChangeTracker.Entries<AuditableEntity>())

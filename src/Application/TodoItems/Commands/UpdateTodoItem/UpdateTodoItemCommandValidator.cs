@@ -1,13 +1,12 @@
 ﻿using FluentValidation;
 
-namespace CleanArchitecture.Application.TodoItems.Commands.UpdateTodoItem
+namespace CleanArchitecture.Application.Items.Commands.UpdateItem
 {
-    public class UpdateTodoItemCommandValidator : AbstractValidator<UpdateTodoItemCommand>
+    public class UpdateItemCommandValidator : AbstractValidator<UpdateItemCommand>
     {
-        public UpdateTodoItemCommandValidator()
+        public UpdateItemCommandValidator()
         {
-            RuleFor(v => v.Title)
-                .MaximumLength(200)
+            RuleFor(v => v.Name)
                 .NotEmpty();
         }
     }

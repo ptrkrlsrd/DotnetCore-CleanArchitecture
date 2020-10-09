@@ -5,27 +5,23 @@ using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.Items.Commands.UpdateItem
+namespace CleanArchitecture.Application.Items.Commands.DeleteItem
 {
-    public class UpdateItemCommand : IRequest
+    public class DeleteItemCommand : IRequest
     {
         public int Id { get; set; }
-
-        public string Name { get; set; }
-
-        public bool Checked { get; set; }
     }
 
-    public class UpdateItemCommandHandler : IRequestHandler<UpdateItemCommand>
+    public class DeleteItemCommandHandler : IRequestHandler<DeleteItemCommand>
     {
         private readonly IApplicationDbContext _context;
 
-        public UpdateItemCommandHandler(IApplicationDbContext context)
+        public DeleteItemCommandHandler(IApplicationDbContext context)
         {
             _context = context;
         }
 
-        public async Task<Unit> Handle(UpdateItemCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(DeleteItemCommand request, CancellationToken cancellationToken)
         {
             var entity = await _context.Items.FindAsync(request.Id);
 
@@ -34,8 +30,7 @@ namespace CleanArchitecture.Application.Items.Commands.UpdateItem
                 throw new NotFoundException(nameof(Item), request.Id);
             }
 
-            entity.Name = request.Name;
-            entity.Checked = request.Checked;
+            _context.Items.Remove(entity);
 
             await _context.SaveChangesAsync(cancellationToken);
 
