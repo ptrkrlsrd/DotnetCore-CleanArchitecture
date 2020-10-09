@@ -7,6 +7,8 @@
 
 This is a solution template for creating an REST API with ASP.NET Core following the principles of Clean Architecture. Create a new project based on this template by clicking the above **Use this template** button or by installing and running the associated NuGet package (see Getting Started for full details). 
 
+Note: This is a fork of Jason Taylor's [project](https://github.com/jasontaylordev/CleanArchitecture) but without Angular, NSwag and with Postgres as a default database instead of SQL Server.
+
 ## Technologies
 
 * .NET Core 3.1
@@ -17,16 +19,15 @@ This is a solution template for creating an REST API with ASP.NET Core following
 * FluentValidation
 * NUnit, FluentAssertions, Moq & Respawn
 
-## Getting Started
+<!--## Getting Started
 
 The easiest way to get started is to install the [NuGet package](https://www.nuget.org/packages/Clean.Architecture.Solution.Template) and run `dotnet new ca-sln`:
 
 1. Install the latest [.NET Core SDK](https://dotnet.microsoft.com/download)
-2. Install the latest [Node.js LTS](https://nodejs.org/en/)
-3. Run `dotnet new --install Clean.Architecture.Solution.Template` to install the project template
-4. Create a folder for your solution and cd into it (the template will use it as project name)
-5. Run `dotnet new ca-sln` to create a new project
-6. Navigate to `src/API` and run `dotnet run` to launch the back end (ASP.NET Core Web API)
+2. Run `dotnet new --install Clean.Architecture.Solution.Template` to install the project template
+3. Create a folder for your solution and cd into it (the template will use it as project name)
+4. Run `dotnet new ca-sln` to create a new project
+5. Navigate to `src/API` and run `dotnet run` to launch the back end (ASP.NET Core Web API)-->
 
 ### Database Configuration
 
@@ -52,7 +53,7 @@ To use `dotnet-ef` for your migrations please add the following flags to your co
 
 For example, to add a new migration from the root folder:
 
- `dotnet ef migrations add "SampleMigration" --project src\Infrastructure --startup-project src\API --output-dir Persistence\Migrations`
+ `dotnet ef migrations add "SampleMigration" --project src/Infrastructure --startup-project src/API --output-dir Persistence/Migrations`
 
 ## Overview
 
