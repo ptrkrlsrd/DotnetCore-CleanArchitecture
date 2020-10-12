@@ -17,8 +17,7 @@ namespace CleanArchitecture.Application.IntegrationTests.Items.Commands
         {
             var command = new DeleteItemCommand { Id = 99 };
 
-            FluentActions.Invoking(() =>
-                SendAsync(command)).Should().Throw<NotFoundException>();
+            FluentActions.Invoking(() => SendAsync(command)).Should().Throw<NotFoundException>();
         }
 
         [Test]

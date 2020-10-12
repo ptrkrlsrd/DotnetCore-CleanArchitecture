@@ -22,8 +22,7 @@ namespace CleanArchitecture.Application.IntegrationTests.Items.Commands
                 Name = "New Title"
             };
 
-            FluentActions.Invoking(() =>
-                SendAsync(command)).Should().Throw<NotFoundException>();
+            FluentActions.Invoking(() => SendAsync(command)).Should().Throw<NotFoundException>();
         }
 
         [Test]
