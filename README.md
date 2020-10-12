@@ -73,6 +73,8 @@ This layer contains classes for accessing external resources such as file system
 
 This layer is responsible for the REST API. This layer depends on both the Application and Infrastructure layers, however, the dependency on Infrastructure is only to support dependency injection. Therefore only *Startup.cs* should reference Infrastructure.
 
+<img src="https://gist.githubusercontent.com/ptrkrlsrd/f00014f2b953a06926d0b9ad519f1c6f/raw/a9a1c774e6251986e81d78e7184693913a3acd34/domain.svg" />
+
 ## License
 
 This project is licensed with the [MIT license](LICENSE).
