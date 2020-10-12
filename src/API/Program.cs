@@ -13,7 +13,7 @@ namespace CleanArchitecture.API
 {
     public class Program
     {
-        public async static Task Main(string[] args)
+        protected async static Task Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
 
@@ -29,8 +29,6 @@ namespace CleanArchitecture.API
                     {
                         context.Database.Migrate();
                     }
-
-                    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
                 }
                 catch (Exception ex)
                 {

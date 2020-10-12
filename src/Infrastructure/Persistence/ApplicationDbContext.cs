@@ -73,7 +73,7 @@ namespace CleanArchitecture.Infrastructure.Persistence
 
             foreach (var domainEvent in domainEventEntities)
             {
-                await _domainEventService.Publish(domainEvent);
+                await _domainEventService.Publish(domainEvent, cancellationToken);
             }
         }
     }

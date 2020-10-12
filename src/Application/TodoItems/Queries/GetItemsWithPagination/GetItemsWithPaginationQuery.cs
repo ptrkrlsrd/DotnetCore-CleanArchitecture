@@ -33,7 +33,7 @@ namespace CleanArchitecture.Application.Items.Queries.GetItemsWithPagination
             return await _context.Items
                 .OrderBy(x => x.Name)
                 .ProjectTo<ItemDto>(_mapper.ConfigurationProvider)
-                .PaginatedListAsync(request.PageNumber, request.PageSize); ;
+                .PaginatedListAsync(request.PageNumber, request.PageSize);
         }
     }
 }

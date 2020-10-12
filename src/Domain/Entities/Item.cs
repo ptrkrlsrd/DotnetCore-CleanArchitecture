@@ -16,7 +16,7 @@ namespace CleanArchitecture.Domain.Entities
             get => _checked;
             set
             {
-                if (value == true && _checked == false)
+                if (value && !_checked)
                 {
                     DomainEvents.Add(new ItemCheckedEvent(this));
                 }
