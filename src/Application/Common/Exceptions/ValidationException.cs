@@ -6,6 +6,7 @@ using FluentValidation.Results;
 
 namespace CleanArchitecture.Application.Common.Exceptions
 {
+    [Serializable]
     public class ValidationException : Exception
     {
         public IDictionary<string, string[]> Errors { get; }
@@ -15,7 +16,7 @@ namespace CleanArchitecture.Application.Common.Exceptions
             Errors = new Dictionary<string, string[]>();
         }
 
-        public ValidationException(SerializationInfo info, StreamingContext context) : base(info, context)
+        protected ValidationException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
             Errors = new Dictionary<string, string[]>();
         }
