@@ -15,7 +15,7 @@ namespace CleanArchitecture.Application.Common.Exceptions
             Errors = new Dictionary<string, string[]>();
         }
 
-        public ValidationException(SerializationInfo info, StreamingContext context) : base(info, context)
+        protected ValidationException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
             Errors = new Dictionary<string, string[]>();
         }
