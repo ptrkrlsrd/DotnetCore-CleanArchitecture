@@ -4,7 +4,6 @@ using CleanArchitecture.Application.Items.Commands.DeleteItem;
 using CleanArchitecture.Application.Items.Commands.UpdateItem;
 using CleanArchitecture.Application.Items.Queries.GetItemsWithPagination;
 using CleanArchitecture.Application.TodoLists.Queries.GetItems;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 

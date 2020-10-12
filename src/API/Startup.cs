@@ -40,8 +40,6 @@ namespace CleanArchitecture.API
                 options.Filters.Add(new ApiExceptionFilterAttribute()))
                     .AddFluentValidation();
 
-            services.AddRazorPages();
-
             services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;
@@ -58,7 +56,6 @@ namespace CleanArchitecture.API
             }
             else
             {
-                app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
 
