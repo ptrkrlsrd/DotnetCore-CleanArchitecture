@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace CleanArchitecture.Application.Common.Exceptions
 {
@@ -20,6 +21,10 @@ namespace CleanArchitecture.Application.Common.Exceptions
 
         public NotFoundException(string name, object key)
             : base($"Entity \"{name}\" ({key}) was not found.")
+        {
+        }
+
+        protected NotFoundException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
     }
